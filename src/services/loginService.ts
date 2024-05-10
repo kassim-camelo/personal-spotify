@@ -1,6 +1,6 @@
 export async function getToken(){
-    const clientId = process.env.PUBLIC_CLIENT_ID
-    const clientSecret = process.env.PUBLIC_CLIENT_SECRET
+    const clientId = ''
+    const clientSecret = ''
     const response = await fetch('https://accounts.spotify.com/api/token', {
         method: 'POST',
         headers: {
