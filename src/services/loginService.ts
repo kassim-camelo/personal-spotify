@@ -1,6 +1,4 @@
-export async function getToken(){
-    const clientId = ''
-    const clientSecret = ''
+export async function getToken(clientId: string, clientSecret: string){
     const response = await fetch('https://accounts.spotify.com/api/token', {
         method: 'POST',
         headers: {

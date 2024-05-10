@@ -1,7 +1,9 @@
 ---
 import { getToken } from "../services/loginService";
 
-const token = await getToken();
+const clientId = import.meta.env.PUBLIC_CLIENT_ID;
+const clientSecret = import.meta.env.PUBLIC_CLIENT_SECRET;
+const token = await getToken(clientId, clientSecret);
 ---
 
 <div>
