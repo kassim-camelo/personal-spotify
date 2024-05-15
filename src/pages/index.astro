@@ -1,13 +1,17 @@
 ---
 import Layout from '../layout/layout.astro'
-import Info from '../components/Info.astro'
+import Info from '../components/Busca.astro'
+import { getToken } from "../services/loginService";
 
-const title = 'Home'
+const clientId = import.meta.env.PUBLIC_CLIENT_ID;
+const clientSecret = import.meta.env.PUBLIC_CLIENT_SECRET;
+const token = await getToken(clientId, clientSecret);
+const title = 'Home';
 ---
 
 <Layout title={title}>
     <div class="bg-gray-700">
         <h1 class="p-4 text-white" >Personal Spotify</h1>
     </div>
-    <Info />
+    <Info token={token.access_token} />
 </Layout>
